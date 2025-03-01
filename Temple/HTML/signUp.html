@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple.com - Create Account</title>
+    <link rel="stylesheet" href="/CSS/signUp.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="welcome-text">
+                <h1 class="title">Welcome to</h1>
+                <h1 class="title">Temple.com</h1>
+            </div>
+            <div class="image-container">
+                <img src="/Images/Lakshmi 2.png" alt="Temple Logo" class="temple-image">
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="form-container">
+                <h1 class="form-title">Create Account</h1>
+                
+                <div class="social-buttons">
+                    <button class="google-btn">
+                        <span class="google-icon">G</span>
+                        Sign up with Google
+                    </button>
+                    <button class="facebook-btn">
+                        <span class="facebook-icon">f</span>
+                        Sign up with Facebook
+                    </button>
+                </div>
+                
+                <div class="divider">
+                    <span class="divider-text">- Or -</span>
+                </div>
+                
+                <form id="signup-form" class="signup-form">
+                    <div class="form-group">
+                        <label for="fullname" class="form-label">Full Name</label>
+                        <input type="text" id="fullname" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-input" required>
+                    </div>
+                    
+                    <button type="submit" class="signin-btn">Sign In</button>
+                </form>
+                
+                <div class="login-link">
+                    Already have an account? <a href="#" class="login-text">Log in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <p class="popup-message">Account created successfully!</p>
+        </div>
+    </div>
+    
+    <script src="/script.js"></script>
+</body>
+</html>

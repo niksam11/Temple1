@@ -1,0 +1,611 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Instrument Sans', Arial, sans-serif;
+    background-color: #cda17a;
+}
+
+/* Navigation styles (unchanged) */
+.nav_container {
+    background: #BF8F65;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.nav_wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav_menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav_item {
+    position: relative;
+}
+
+.nav_link {
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.nav_indicator {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 4px;
+    background-color: #8B4513;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav_item:hover .nav_indicator {
+    opacity: 1;
+}
+
+.nav_login_btn {
+    background-color: #8B4513;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav_login_btn:hover {
+    background-color: #6b3410;
+}
+
+.nav_dropdown {
+    position: relative;
+}
+
+.nav_dropdown_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 150px;
+    list-style: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.nav_dropdown:hover .nav_dropdown_menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav_dropdown_menu li a {
+    color: #000;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.nav_dropdown_menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+.nav_toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav_toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+/* Main content styles */
+.temple_main_wrapper {
+    padding: 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.temple_about_section {
+    margin-bottom: 40px;
+}
+
+.temple_about_title {
+    color: #401201;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.22;
+    margin-bottom: 30px;
+}
+
+.temple_welcome_box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.temple_welcome_content {
+    flex: 1;
+}
+
+.temple_welcome_heading {
+    color: #73310a;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.22;
+}
+
+.temple_welcome_text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(64, 18, 1, 0.75);
+    margin-top: 10px;
+}
+
+.temple_image_container {
+    flex: 0 0 45%;
+    max-width: 450px;
+}
+
+.temple_main_image {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.temple_worship_section {
+    margin-top: 50px;
+}
+
+.temple_worship_title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.22;
+    color: #401201;
+}
+
+.temple_worship_intro {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #401201;
+    margin-bottom: 20px;
+}
+
+.temple_worship_list {
+    padding-left: 40px;
+    margin-bottom: 30px;
+}
+
+.temple_worship_item {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #401201;
+    margin-bottom: 10px;
+}
+
+/* Footer styles */
+.footer-wrapper {
+    background-color: #5C1F0B;
+    color: white;
+    padding: 50px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.section-heading {
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.timing-section, .quicklinks-section, .contact-section {
+    flex: 1;
+}
+
+.timing-content {
+    line-height: 1.6;
+}
+
+.timing-day {
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.timing-detail {
+    color: rgba(255, 255, 255, 0.9);
+    margin-left: 15px;
+}
+
+.quicklinks-list {
+    list-style: none;
+    padding: 0;
+}
+
+.quicklinks-list li {
+    margin-bottom: 15px;
+}
+
+.quicklink-item {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.quicklink-item:hover {
+    opacity: 0.8;
+}
+
+.temple-image-container {
+    margin-bottom: 20px;
+}
+
+.temple-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-icon {
+    font-size: 20px;
+    color: white;
+    margin-top: 3px;
+}
+
+.contact-text {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.email-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .temple_welcome_box {
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .temple_about_title,
+    .temple_worship_title {
+        font-size: 40px;
+    }
+
+    .temple_welcome_heading {
+        font-size: 32px;
+    }
+
+    .temple_welcome_text,
+    .temple_worship_intro,
+    .temple_worship_item {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav_wrapper {
+        justify-content: flex-end;
+    }
+
+    .nav_toggle {
+        display: flex;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .nav_menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background-color: #D2B48C;
+        flex-direction: column;
+        padding: 4rem 2rem;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav_menu.active {
+        right: 0;
+    }
+
+    .nav_dropdown_menu {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+    }
+
+    .nav_dropdown.active .nav_dropdown_menu {
+        display: block;
+    }
+
+    .nav_indicator {
+        display: none;
+    }
+
+    .nav_toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav_toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav_toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .temple_welcome_box {
+        flex-direction: column;
+    }
+
+    .temple_image_container {
+        order: -1;
+        max-width: 100%;
+    }
+
+    .temple_about_title,
+    .temple_worship_title {
+        font-size: 32px;
+    }
+
+    .temple_welcome_heading {
+        font-size: 28px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .timing-section,
+    .quicklinks-section,
+    .contact-section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .temple_main_wrapper {
+        padding: 15px;
+    }
+
+    .temple_about_title,
+    .temple_worship_title {
+        font-size: 28px;
+    }
+
+    .temple_welcome_heading {
+        font-size: 24px;
+    }
+
+    .temple_welcome_text,
+    .temple_worship_intro,
+    .temple_worship_item {
+        font-size: 16px;
+    }
+
+    .footer-wrapper {
+        padding: 30px 0;
+    }
+
+    .section-heading {
+        font-size: 20px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+.archakulu_section {
+    background-color: #ffffff;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.archakulu_container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.archakulu_heading {
+    text-align: center;
+    color: #401201;
+   font-family:Instrument Sans ; 
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.archakulu_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.archakulu_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #73310a;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #ffffff;
+    width: 300;
+    height: 350;
+    top: 1978px;
+    left: 102px;
+    border-width: 1px;
+    
+}
+
+.archakulu_image_wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.archakulu_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.archakulu_name {
+    color: #401201;
+    font-family: Instrument Sans;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.gallery_section {
+    background-color: #cda17a;
+    padding: 40px 0;
+}
+
+.gallery_container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery_heading {
+    color: #401201;
+    font-family: Instrument Sans;
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.gallery_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery_item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.gallery_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .archakulu_grid,
+    .gallery_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .archakulu_grid,
+    .gallery_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .archakulu_heading,
+    .gallery_heading {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .archakulu_grid,
+    .gallery_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .archakulu_heading,
+    .gallery_heading {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .archakulu_card {
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
